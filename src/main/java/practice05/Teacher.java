@@ -3,24 +3,25 @@ package practice05;
 import practice06.Klass;
 
 public class Teacher extends Person {
-    private int klass ;
-    public Teacher(String name, int age, int klass) {
+    private Integer klass;
+
+    public Teacher(String name, int age, Integer klass) {
         super(name, age);
         this.klass = klass;
     }
 
     public Teacher(String name, int age) {
-        this(name, age,0);
+        this(name, age, null);
     }
-    public int getKlass() {
 
+    public int getKlass() {
         return klass;
     }
 
-    public String introduce(){
-        if (! (klass==0)) {
-            return String.format("My name is %s. I am %d years old. I am a Teacher. I teach Class %d.", getName(), getAge(), getKlass());
-           }
-        return String.format("My name is %s. I am %d years old. I am a Teacher. I teach No Class.", getName(), getAge());
+    public String introduce() {
+        if (klass == null) {
+            return super.introduce() + String.format(" I am a Teacher. I teach No Class.");
         }
+        return super.introduce() + String.format(" I am a Teacher. I teach Class %d.", getKlass());
+    }
 }
