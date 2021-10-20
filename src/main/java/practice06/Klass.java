@@ -1,9 +1,9 @@
 package practice06;
 
 public class Klass {
-    private int number;
+    private Integer number;
 
-    public Klass(int number) {
+    public Klass(Integer number) {
         this.number = number;
     }
 
