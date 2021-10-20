@@ -1,5 +1,7 @@
 package practice07;
 
+import java.util.Objects;
+
 public class Person {
     private int id;
     private String name;
@@ -20,6 +22,19 @@ public class Person {
 
     public String introduce(){
         return  String.format("My name is %s. I am %d years old.",name,age);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return id == person.id && age == person.age && Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age);
     }
 }
 
