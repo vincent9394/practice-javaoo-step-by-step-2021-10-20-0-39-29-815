@@ -15,4 +15,8 @@ public class Person {
     public int getAge() {
         return age;
     }
+
+    public void introduce(){
+        System.out.printf("My name is %s. I am %d years old.",name,age);
+    }
 }
