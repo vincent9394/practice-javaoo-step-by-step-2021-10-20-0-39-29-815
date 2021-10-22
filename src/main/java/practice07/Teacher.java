@@ -3,12 +3,13 @@ package practice07;
 public class Teacher extends Person {
     private Klass klass;
 
-    public Teacher(int id,String name, int age) {
+    public Teacher(int id,String name, int age)
+    {
         super(id,name, age);
     }
 
     public Teacher(int id, String name, int age, Klass klass) {
-        this(id, name, age);
+        super(id, name, age);
         this.klass = klass;
     }
 
@@ -20,7 +21,7 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         if (klass == null) {
-            return super.introduce() + String.format(" I am a Teacher. I teach No Class.");
+            return String.format("%s I am a Teacher. I teach No Class.",super.introduce());
         }
         return super.introduce() + String.format(" I am a Teacher. I teach Class %d.", klass.getNumber());
     }

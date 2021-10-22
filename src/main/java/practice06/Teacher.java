@@ -20,7 +20,7 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         if (klass == null) {
-            return super.introduce() + String.format(" I am a Teacher. I teach No Class.");
+            return super.introduce() + " I am a Teacher. I teach No Class.";
         }
         return super.introduce() + String.format(" I am a Teacher. I teach Class %d.", klass.getNumber());
     }
